@@ -21,13 +21,35 @@ mongoose.connect(process.env.MONGODB_ATLAS_URI)
 
 // Import routes
 const recipeRoutes = require('./routes/recipes');
+const userRoutes = require('./routes/users');
 
 // Use routes
 app.use('/api/recipes', recipeRoutes);
+app.use('/api/users', userRoutes);
 
 // Root route
 app.get('/', (req, res) => {
   res.send('Recipe API is running');
+});
+
+// Debug route to check if server is receiving requests
+app.get('/debug', (req, res) => {
+  res.json({
+    message: 'Debug endpoint working',
+    routes: {
+      recipes: '/api/recipes',
+      users: '/api/users',
+      register: '/api/users/register'
+    }
+  });
+});
+
+// Add a direct registration route for testing
+app.post('/direct-register', (req, res) => {
+  res.json({
+    message: 'Direct registration endpoint hit',
+    body: req.body
+  });
 });
 
 const PORT = process.env.PORT || 10000;

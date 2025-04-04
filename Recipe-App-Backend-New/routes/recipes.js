@@ -1,6 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
+// Simple test route
+router.get('/test', (req, res) => {
+  res.json({ message: 'Recipe test route working' });
+});
+
 // Get all recipes
 router.get('/', (req, res) => {
   res.json({ message: 'Get all recipes endpoint' });

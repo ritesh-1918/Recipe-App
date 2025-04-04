@@ -17,7 +17,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "optimize": "npm run build && npx optimize-css-cli build/**/*.css"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "browserslist": {
     "production": [">0.2%", "not dead", "not op_mini all"]

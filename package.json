@@ -4,7 +4,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node server.js", // Changed from nodemon
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "Ritesh Bonthalakoti",
@@ -17,6 +18,7 @@
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.13.0",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "compression": "^1.7.4" // Add if missing
   }
 }

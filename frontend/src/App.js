@@ -3,7 +3,8 @@ import Navbar from './component/Navbar'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+// Remove unused import
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 
 
@@ -23,3 +24,6 @@ const App = () => {
 }
 
 export default App
+
+// Fix unused import warning
+import { Navigate } from 'react-router-dom';  // Remove this if unused

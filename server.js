@@ -1,23 +1,35 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors'); // Added missing CORS import
+const cors = require('cors');
 require('dotenv').config();
 
-// Remove duplicate app declaration
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware fixes
+// Middleware
 app.use(express.json());
 app.use(cors({
   origin: process.env.FRONTEND_URL || 'http://localhost:3000',
   credentials: true
 }));
 
-// MongoDB connection with error handling
-mongoose.connect(process.env.MONGODB_ATLAS_URI) // Not MONGO_URL
-app.listen(process.env.PORT || 3000)
-.then(() => console.log("DB connected successfully..."))
-.catch(err => console.error("MongoDB connection error:", err));
+// Basic route for testing
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to Recipe API' });
+});
 
-// ... rest of your existing routes remain unchanged ...
+// Health check endpoint
+app.get('/api/healthcheck', (req, res) => {
+  res.status(200).json({ status: 'ok', message: 'Server is running' });
+});
+
+// MongoDB connection with error handling
+mongoose.connect(process.env.MONGODB_ATLAS_URI)
+  .then(() => {
+    console.log("DB connected successfully...");
+    // Start server after DB connection
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  })
+  .catch(err => console.error("MongoDB connection error:", err));

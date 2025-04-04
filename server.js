@@ -15,10 +15,8 @@ app.use(cors({
 }));
 
 // MongoDB connection with error handling
-mongoose.connect(process.env.MONGO_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect(process.env.MONGODB_ATLAS_URI) // Not MONGO_URL
+app.listen(process.env.PORT || 3000)
 .then(() => console.log("DB connected successfully..."))
 .catch(err => console.error("MongoDB connection error:", err));
 

@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js", // Changed from nodemon
+    "start": "node server.js",
     "dev": "nodemon server.js"
   },
   "keywords": [],
@@ -19,6 +19,6 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.13.0",
     "nodemon": "^3.1.9",
-    "compression": "^1.7.4" // Add if missing
+    "compression": "^1.7.4"
   }
 }

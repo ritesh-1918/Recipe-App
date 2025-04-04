@@ -16,23 +16,21 @@ app.use(cors({
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_ATLAS_URI)
-  .then(() => console.log('Connected to MongoDB'))
+  .then(() => console.log('DB connected successfully...'))
   .catch(err => console.error('Could not connect to MongoDB', err));
 
 // Import routes
 const recipeRoutes = require('./routes/recipes');
-const userRoutes = require('./routes/users');
 
 // Use routes
 app.use('/api/recipes', recipeRoutes);
-app.use('/api/users', userRoutes);
 
 // Root route
 app.get('/', (req, res) => {
   res.send('Recipe API is running');
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

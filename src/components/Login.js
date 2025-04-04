@@ -1,5 +1,4 @@
-// Find this line:
-import { userService } from '../services/api';
-
-// Change it to:
+// Update the import statement
 import { userService } from '../services/auth';
+
+// Rest of your Login component remains unchanged

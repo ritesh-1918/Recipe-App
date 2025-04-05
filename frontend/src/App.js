@@ -1,29 +1,30 @@
-import React from 'react'
-import Navbar from './component/Navbar'
+import AppHeader from './component/AppHeader'
 import Home from './pages/Home'
-import Login from './pages/Login'
-import Register from './pages/Register'
-// Remove unused import
+import AuthPage from './pages/AuthPage'
+import CreateRecipe from './pages/CreateRecipe'
+import Dashboard from './pages/Dashboard'
+import Profile from './pages/Profile'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Registration from './components/Registration';
+import Login from './components/Login';
 import './App.css'
 
-
-const App = () => {
+function App() {
   return (
     <Router>
-      <Navbar />
-      <Home />
+      <AppHeader />
       <Routes>
-        {/* Redirect to Login if not logged in */}
+        <Route path="/register" element={<Registration />} />
+        <Route path="/auth" element={<AuthPage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/home" element={ <Home /> } />
+        <Route path="/create-recipe" element={<CreateRecipe />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </Router>
-  )
+  );
 }
 
 export default App
-
-// Fix unused import warning
-import { Navigate } from 'react-router-dom';  // Remove this if unused

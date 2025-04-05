@@ -1,46 +1,131 @@
-body{
+body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: yellow;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
-/* Container for Login, Register, and Home */
+/* Global Container */
 .container {
-  background: white;
-  padding: 20px;
-  width: 320px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
- margin-left: auto;
- margin-right: auto;
- margin-top: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-/* Input Fields */
-input {
-  width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* Auth Container (for Login/Register) */
+.auth-container .container {
+  background: white;
+  padding: 30px;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 40px auto;
+}
+
+/* Form Elements */
+input, textarea, select {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
   font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #4CAF50;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
 }
 
 /* Buttons */
 button {
-  width: 100%;
-  padding: 10px;
+  padding: 12px 20px;
   margin-top: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 16px;
-  background-color: #007bff;
+  font-weight: 600;
+  background-color: #4CAF50;
   color: white;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #3e8e41;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+/* Links */
+a {
+  color: #4CAF50;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #3e8e41;
+  text-decoration: underline;
+}
+
+/* Navbar Link Styling */
+.nav-link {
+  padding: 12px 24px;
+  border-radius: 12px;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+  background-color: rgba(76, 175, 80, 0.15);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-link:hover {
+  background-color: rgba(76, 175, 80, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  text-decoration: none;
+}
+
+.nav-link.active {
+  background-color: rgba(76, 175, 80, 0.35);
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.2);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.py-4 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }

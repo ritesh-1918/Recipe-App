@@ -1,0 +1,50 @@
+.navbar {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.brand-logo {
+  filter: drop-shadow(0 0 3px rgba(255,255,255,0.3));
+}
+
+.brand-text {
+  background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  font-weight: 500;
+  margin: 0 5px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffc107 !important;
+  transform: translateY(-2px);
+}
+
+.btn-outline-success {
+  border-color: #ff9a9e;
+  color: #ff9a9e;
+}
+
+.btn-outline-success:hover {
+  background-color: #ff9a9e;
+  border-color: #ff9a9e;
+  color: white;
+}

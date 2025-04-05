@@ -1,35 +1,38 @@
 import api from './api';
+import { userService } from './auth';
 
-export const getAllRecipes = async (page = 1) => {
-  const response = await api.get(`/api/recipes?page=${page}`);
-  return response.data;
-};
-
-export const getRecipeById = async (id) => {
-  const response = await api.get(`/api/recipes/${id}`);
-  return response.data;
-};
-
+// Recipe service functions
 export const createRecipe = async (recipeData) => {
-  const token = localStorage.getItem('userToken');
-  const response = await api.post('/api/recipes', recipeData, {
-    headers: { Authorization: `Bearer ${token}` }
-  });
-  return response.data;
+  try {
+    // Make sure user is authenticated
+    if (!userService.getCurrentUser()) {
+      throw new Error('You must be logged in to create a recipe');
+    }
+    
+    const response = await api.post('/api/recipes', recipeData);
+    return response.data;
+  } catch (error) {
+    console.error('Error creating recipe:', error);
+    throw error;
+  }
 };
 
-export const updateRecipe = async (id, recipeData) => {
-  const token = localStorage.getItem('userToken');
-  const response = await api.put(`/api/recipes/${id}`, recipeData, {
-    headers: { Authorization: `Bearer ${token}` }
-  });
-  return response.data;
+export const searchRecipes = async (query) => {
+  try {
+    const response = await api.get(`/api/recipes/search?q=${query}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error searching recipes:', error);
+    throw error;
+  }
 };
 
-export const deleteRecipe = async (id) => {
-  const token = localStorage.getItem('userToken');
-  const response = await api.delete(`/api/recipes/${id}`, {
-    headers: { Authorization: `Bearer ${token}` }
-  });
-  return response.data;
+export const getRecipes = async () => {
+  try {
+    const response = await api.get('/api/recipes');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching recipes:', error);
+    throw error;
+  }
 };

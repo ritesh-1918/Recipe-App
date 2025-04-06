@@ -1,6 +1,13 @@
 const jwt = require('jsonwebtoken');
 
 module.exports = (req, res, next) => {
+  // Public routes that don't require authentication
+  const publicRoutes = ['/public', '/about', '/contact'];
+
+  if (publicRoutes.includes(req.path)) {
+    return next();
+  }
+
   try {
     // Get token from header
     const token = req.header('Authorization').replace('Bearer ', '');
@@ -15,4 +22,4 @@ module.exports = (req, res, next) => {
   } catch (error) {
     res.status(401).json({ message: 'Not authorized' });
   }
-};
+}

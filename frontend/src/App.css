@@ -129,3 +129,40 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+header {
+  background-color: #ff6347;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+button {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e5533d;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+  .header {
+    font-size: 18px;
+  }
+  .button {
+    width: 100%;
+    font-size: 16px;
+  }
+}

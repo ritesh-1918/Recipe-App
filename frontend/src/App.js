@@ -1,12 +1,12 @@
-import AppHeader from './component/AppHeader'
-import Home from './pages/Home'
-import AuthPage from './pages/AuthPage'
-import CreateRecipe from './pages/CreateRecipe'
-import Dashboard from './pages/Dashboard'
-import Profile from './pages/Profile'
+import AppHeader from './component/AppHeader.jsx'
+import Home from './pages/Home.jsx'
+import AuthPage from './pages/AuthPage.jsx'
+import CreateRecipe from './pages/CreateRecipe.jsx'
+import Dashboard from './pages/Dashboard.jsx'
+import Profile from './pages/Profile.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Registration from './components/Registration';
-import Login from './components/Login';
+import Registration from './components/Registration.jsx';
+import Login from './components/Login.jsx';
 import './App.css'
 
 function App() {

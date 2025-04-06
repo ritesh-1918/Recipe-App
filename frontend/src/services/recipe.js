@@ -17,6 +17,21 @@ export const createRecipe = async (recipeData) => {
   }
 };
 
+export const getUserRecipes = async () => {
+  try {
+    // Make sure user is authenticated
+    if (!userService.getCurrentUser()) {
+      throw new Error('You must be logged in to view your recipes');
+    }
+    
+    const response = await api.get('/api/recipes/user');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching user recipes:', error);
+    throw error;
+  }
+};
+
 export const searchRecipes = async (query) => {
   try {
     const response = await api.get(`/api/recipes/search?q=${query}`);

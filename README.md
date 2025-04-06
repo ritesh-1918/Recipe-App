@@ -105,7 +105,7 @@ This project consists of two main parts:
 
 ## Live Demo
 
-- Frontend: [https://recipe-app-frontend.vercel.app](https://recipe-app-frontend.vercel.app)
+- Frontend: [(https://recipe-app-frontendrecipe-app-frontend-6o2gkd4dv-ritesh-1918.vercel.app/home)
 - Backend API: [https://recipe-app-backend.onrender.com](https://recipe-app-backend.onrender.com)
 
 ## License

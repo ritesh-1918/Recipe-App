@@ -1,7 +1,5 @@
 # Dependencies
 node_modules/
-/.pnp
-.pnp.js
 
 # Environment variables
 .env
@@ -9,10 +7,6 @@ node_modules/
 .env.development.local
 .env.test.local
 .env.production.local
-
-# Build files
-/build
-/dist
 
 # Logs
 logs
@@ -36,6 +30,3 @@ yarn-error.log*
 # OS files
 .DS_Store
 Thumbs.db
-
-# Vercel
-.vercel
